@@ -24,6 +24,9 @@ $(call inherit-product, device/xiaomi/tissot/device.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
+# Inherit PixelGApps
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tissot
 PRODUCT_NAME := rr_tissot
@@ -35,7 +38,7 @@ TARGET_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-RR_BUILDTYPE= Official
+RR_BUILDTYPE= Gapps
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="tissot-user 8.0.0 OPR1.170623.026 8.1.10 release-keys"
